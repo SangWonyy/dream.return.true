@@ -124,11 +124,20 @@
 									손쉽고 재미 요소와 함께 깔끔한 UI/UX를 제공하여 쓰레기에 대한 관심을 끌기 위한 앱이다.
 								</div>
 								<br/>
-								<div class="row" >
+								<div>
+									2023.07 ~ 진행중 ( 서비스 오픈 전 )
+								</div>
+								<br/>
+								프로젝트 코드 (Git) 및 구축 과정 (notion - Side project Category)
+								<div class="align-center" style="margin-top: 10px">
 									<a href="https://github.com/KillBILL-Project/wwooss" style="color: black">
-										<img src="images/github-mark.svg" width="30px" height="30px" style="margin-right: 5px"/>  WWOOSS GITHUB
+										<img src="images/github-mark.svg" width="27px" height="27px" style="margin-right: 10px"/>
+									</a>
+									<a href="https://sheer-golf-0cf.notion.site/c559aa96dc394ecc9267508f413c38e7?pvs=4" target="_blank">
+										<img class="git-logo" src="images/notion.svg" width="40px" height="40px">
 									</a>
 								</div>
+
 							</div>
 						</div>
 					</div>
@@ -155,10 +164,10 @@
 								<div class="skill-title">
 									<h3>1. 개발</h3>
 									<div class="skill-content">
-										<div class="content services animate-box">
+										<div class="content animate-box">
 											<ul>
 												<li>유상원 - 백엔드 : 기여도(90%)</li>
-												<li>김범현 -
+												<li>김범현
 													<br/>백엔드 : 기여도(10%)
 													<br/>프런트엔드 : 기여도 (75%)</li>
 												<li>장광현 - 프런트 : 기여도 (25%)</li>
@@ -170,7 +179,7 @@
 								<div class="skill-title">
 									<h3>2. 기획</h3>
 									<div class="skill-content">
-										<div class="content services animate-box">
+										<div class="content animate-box">
 											<ul>
 												<li>김규태</li>
 												<li>이제인</li>
@@ -183,7 +192,7 @@
 								<div class="skill-title">
 									<h3>3. 디자인</h3>
 									<div class="skill-content">
-										<div class="content services animate-box">
+										<div class="content animate-box">
 											<ul>
 												<li>황보연</li>
 												<li>김지연</li>
@@ -195,13 +204,12 @@
 								<div class="skill-title">
 									<h3>4. 마케팅</h3>
 									<div class="skill-content">
-										<div class="content services animate-box">
+										<div class="content animate-box">
 											<ul>
 												<li>이현주</li>
 											</ul>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>
@@ -270,7 +278,7 @@
 						</div>
 
 						<div>
-							- 도입 후 단점도 생각
+							- 도입 후 단점 생각
 						</div>
 						<div class="content services animate-box" style="margin-top: 10px">
 							<ul>
@@ -281,13 +289,68 @@
 							정리 : 적응 초반, 단일 모듈과 같이 단순히 기능을 추가 하는 것이 아닌, 해당하는 모듈에 기능을 추가해주어야했다. 이에 따른 디펜던시에 영향을 고민 또한 많이했다.
 							오히려 시간 소비가 많이 되었지만, 적응 후엔 전반적인 코드 구성을 바라보는 데에 있어 명확해지고 깔끔해진 결과를 가져왔다.
 						</div>
+					</div>
+				</div>
 
+
+				<div class="skill-title">
+					<h3>2. 인프라 설계</h3>
+					- 개발
+					<div class="row" style=" display: flex; justify-content: flex-start; margin-top: 10px">
+						<div class="content services animate-box">
+							<ul>
+								<li>비용을 고려한 간단한 구조</li>
+								<li>단일 인스턴스 내부 도커를 통해 api • swagger • db • es 생성 고려</li>
+								<li>문제 - aws 프리티어 수준에서 실행하기 부족한 스팩</li>
+								<li>해결 - 프리티어를 최대한 활용한 분리</li>
+								<li>(api • swagger) + (es) + (rds) 분리 후 비용은 es에서만 부과</li>
+							</ul>
+						</div>
+					</div>
+					- 운영 1차
+					<div class="row" style=" display: flex; justify-content: flex-start; margin-top: 10px">
+						<div class="content services animate-box" style="margin-top: 10px">
+							<ul>
+								<li>운영에서 가장 기본이라고 생각하는 구조를 설계</li>
+								<li>2개의 가용영역</li>
+								<li>각 가용영역에 1 public subnet • 2 private subnet</li>
+								<li>외부 인터넷과의 통신을 위한 NAT</li>
+								<li>S3, CloudFront를 위한 endPoint</li>
+								<li>private subnet 접근을 위한 SSM</li>
+							</ul>
+							<div>
+								<b>문제</b>
+								<br/>
+								- 기본이라고 생각을 가지고 설계 후 하나씩 도입하는 과정 속에 계속되는 추가비용.
+								<br/>
+								- 사이드프로젝트를 고려하면 과할 수 있다고 판다.
+								<br/>
+								- 추후 서비스 오픈 후 유저가 확보 될 시 점진적 확장으로 변경.
+							</div>
+						</div>
+						<div>
+							<img src="images/infra.png" width="500px" >
+						</div>
+					</div>
+					- 운영 2차
+					<div class="row" style=" display: flex; justify-content: flex-start; margin-top: 10px">
+						<div class="content services animate-box" style="margin-top: 10px">
+							<ul>
+								<li>개발과 동일하게 public subnet에 인스턴스를 할당</li>
+								<li>개발 인스턴스 보다 상향된 인스턴스로 구성</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="skill-title">
+					<h3>3. DB ERD</h3>
+					<div>
+						<img src="images/db.png" width="100%" >
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div style="margin-bottom: 100px"></div>
+	<div style="margin-bottom: 100px"></div>
 	</div>
 
 	<!-- jQuery -->
