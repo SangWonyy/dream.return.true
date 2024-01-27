@@ -7,7 +7,7 @@
 
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *	Edit this section
 *
 * ======================================================= */
@@ -1313,3 +1313,21 @@ input[type="text"] {
 
 .js .animate-box {
   opacity: 0; }
+
+.skill-title h3 {
+  font-family: "Karla", Arial, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.skill-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.content {
+  width: 50%;
+  height: 50%;
+}
