@@ -251,21 +251,37 @@
 								</ul>
 							</div>
 							<div>
-								<img src="images/wwooss-tree.png" width="300px">
+								<img src="images/wwooss-tree.png" width="360px" height="200">
 							</div>
 						</div>
+						- Why Multi Module
+						<div class="row" style=" display: flex; justify-content: flex-start; margin-top: 10px">
+							<div class="content services animate-box" style="margin-top: 10px">
+								<ul>
+									<li>증가하는 요구사항 및 기능</li>
+									<li>모듈별 코드 배포가 가능</li>
+									<li>모듈별 관리로 인해 멀티프로젝트 관리로 안해도 된다. 이에 따른 중복 코드 제거</li>
+									<li>명확한 역할 분기로 인해, 코드 유지보수 관점에서의 장점을 가짐</li>
+								</ul>
+							</div>
+							<div>
+								<img src="images/multimodule.png" width="360px" height="200">
+							</div>
+						</div>
+
 						<div>
-							- Why Multi Module
+							- 도입 후 단점도 생각
 						</div>
 						<div class="content services animate-box" style="margin-top: 10px">
 							<ul>
-								<li>api : Controller, Service의 중심 비즈니스 로직 구현</li>
-								<li>batch : batch service를 위한 모듈. 예) 알람 일괄 발송</li>
-								<li>common : 공통 사항을 담은 모듈. 예) util, dto</li>
-								<li>domain-es : es 모듈. es document, repository 등 구성</li>
-								<li>domain-rds : rds 모듈. entity, repository 등 구성</li>
+								<li>초기 단일 프로젝트, 단일 모듈에서 옮기는 과정 속 많은 시간소비</li>
+								<li>단방향 디펜던시을 유지하기 위한 노력</li>
+								<li>각 모듈의 기능을 침범하지 않기 위한 노력</li>
 							</ul>
+							정리 : 적응 초반, 단일 모듈과 같이 단순히 기능을 추가 하는 것이 아닌, 해당하는 모듈에 기능을 추가해주어야했다. 이에 따른 디펜던시에 영향을 고민 또한 많이했다.
+							오히려 시간 소비가 많이 되었지만, 적응 후엔 전반적인 코드 구성을 바라보는 데에 있어 명확해지고 깔끔해진 결과를 가져왔다.
 						</div>
+
 					</div>
 				</div>
 			</div>
