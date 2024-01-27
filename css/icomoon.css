@@ -3834,3 +3834,25 @@
 .icon-world2:before {
   content: "\ed91";
 }
+.ysw-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.git-logo {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.mb-1 {
+  margin-bottom: 3px;
+}
+.mt-1 {
+  margin-top: 3px;
+}
