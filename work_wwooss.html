@@ -370,7 +370,36 @@
 				</div>
 				<br/>
 				<div class="skill-title">
-					<h3>4. DB ERD</h3>
+					<h3>4. 배포 자동화</h3>
+					<div class="animate-box">
+						<ul>
+							<li>Git actions와 docker를 통해 EC2 배포 자동화</li>
+							<li>
+								api모듈과 batch 모듈 분리하여 각각의 이미지를 빌드 후 도커 허브에 push
+							</li>
+							<li>docker image를 docker-compose를 활요해 api, batch, swagger 실행</li>
+							<li>개발, 운영 분리하여 develop main 브랜치 머지를 트리거로 자동배포</li>
+						</ul>
+					</div>
+					<div class="animate-box">
+						문제
+						<ul>
+							<li>최신 이미지를 가져오면서 이전 버전은 계속 남아있어 "no spage left on device" error</li>
+							<li>
+								이전 빌드 제거
+								<br/>
+								“ docker rmi $(docker images -q --filter "dangling=true")”
+							</li>
+						</ul>
+						<br/>
+						이와 같이 진행 후 생각해보았을 때, 문제가 있을 수 있다고 생각했습니다. 기존에 tag 이름을 항상 latest로 하였고, 그로 인해 이전 버전은 null로 되었습니다. 위의 스크립트는 null을 제거해주는 스크립트이기 때문에 롤백해야할 상황에 문제가 있다고 생각이 들었습니다.
+						추후 단순 latest만이 아닌 버전관리를 통해 어떤 버전까지만 남겨놓을지에 정책을 세우고 변경해야겠다고 판단했습니다.
+					</div>
+
+				</div>
+				<br/>
+				<div class="skill-title">
+					<h3>5. DB ERD</h3>
 					<div>
 						<img src="images/db.png" width="100%" >
 					</div>
